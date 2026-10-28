@@ -1,0 +1,17 @@
+{
+  "object": "schematic camera lens",
+  "representation": "schematic; replace with verified parts for a specific lens",
+  "audience": "curious beginners",
+  "chapters": [
+    {"id":"assembled","range":[0,0.12],"purpose":"Establish the complete object"},
+    {"id":"opening","range":[0.12,0.3],"purpose":"Rotate and move the housing aside"},
+    {"id":"overview","range":[0.3,0.45],"purpose":"Separate and label related parts"},
+    {"id":"front-element","range":[0.45,0.65],"purpose":"Explain how incoming light enters"},
+    {"id":"aperture","range":[0.65,0.85],"purpose":"Explain how the opening controls light"},
+    {"id":"reassemble","range":[0.85,1],"purpose":"Restore the assembly and its function"}
+  ],
+  "parts": [
+    {"id":"front-element","name":"Front optical element","parent":"optics","geometryNodes":[],"assembledTransform":{"position":[0,0,0],"rotation":[0,0,0],"scale":[1,1,1]},"explodedOffset":[0,0,1],"labelAnchor":[0.5,0,0],"labelSide":"right","detailSection":"front-element","function":"Refracts incoming light as part of the lens's optical system.","relationship":"Works with the remaining optical elements to form an image.","example":"Trace an illustrative ray through this element into the next group.","source":"schematic example; exact optical prescription unknown"},
+    {"id":"aperture","name":"Aperture mechanism","parent":"optics","geometryNodes":[],"assembledTransform":{"position":[0,0,-0.5],"rotation":[0,0,0],"scale":[1,1,1]},"explodedOffset":[0,0,-0.5],"labelAnchor":[-0.5,0,0],"labelSide":"left","detailSection":"aperture","function":"Changes the effective opening through which light passes.","relationship":"Operates within the optical path; its location depends on lens design.","example":"Compare a wider and narrower opening with an illustrative light cone.","source":"schematic example; not a specific lens assembly"}
+  ]
+}

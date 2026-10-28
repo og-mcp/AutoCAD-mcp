@@ -1,0 +1,59 @@
+{
+  "skill_name": "scroll-object-explainer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Plan only: I have a GLB of a bicycle hub with named axle, bearings, shell, and freehub groups. Design a React scroll explainer that opens the hub and teaches beginners what every part does, then closes it when scrolling back. Deliver a storyboard, part-registry design, implementation approach, and verification plan; do not build an app.",
+      "expected_output": "A continuous reversible object-opening storyboard with all four parts mapped to detailed sections, evidence-aware explanations, a shared scroll controller, camera/label handling, and browser verification.",
+      "files": [],
+      "expectations": [
+        "Maps axle, bearings, shell, and freehub to separate learning sections.",
+        "Uses one continuous assembled-to-exploded-to-reassembled object narrative.",
+        "Defines deterministic reverse scrolling or restoration from saved assembled transforms.",
+        "Addresses camera framing and model-to-screen label anchoring.",
+        "Proposes browser checks for part selection, reverse scrolling, mobile layout, and reduced motion."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Plan only: make a phone-sized interactive explanation of how an espresso machine works. I have one exterior photo and no internal CAD. As I scroll, open it and explain the pump, heater, and brew group in detail. Deliver the practical plan and clearly identify assumptions; do not build an app or give physical repair instructions.",
+      "expected_output": "A clearly labeled schematic with no claim to exact manufacturer internals, coherent water/heat flow teaching, mobile framing, detailed parts, accessible direct navigation, reduced motion, and verification.",
+      "files": [],
+      "expectations": [
+        "Clearly identifies internal geometry as schematic because an exterior photo does not establish exact internals.",
+        "Explains pump, heater, and brew group through a coherent water and heat relationship.",
+        "Defines individual detailed part sections instead of an unrelated example gallery.",
+        "Addresses phone camera framing and readable labels or an intentional mobile annotation layout.",
+        "Includes reduced-motion or direct-navigation access and browser checks."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Plan only: our lens demo just spins on top and has six unrelated cards underneath. Fix the experience so scrolling opens the same lens and each subsection explains one actual part. Our GLB uses Draco and starts hidden. Describe the corrected scene, loading, reverse-scroll behavior, and browser checks. Do not write an app.",
+      "expected_output": "A continuous pinned disassembly story with semantic part mapping, decoder/readiness handling, detailed part focus and explanation, and real reverse-scroll checks instead of a decorative hero.",
+      "files": [],
+      "expectations": [
+        "Replaces the decorative hero/card split with one continuous pinned object-opening story.",
+        "Maps each detailed subsection to an actual selected model component and explanation.",
+        "Specifies Draco decoder configuration.",
+        "Separates model load readiness from visibility when testing the initially hidden scene.",
+        "Defines a meaningful reverse-scroll test and exact restoration or deterministic state."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Plan only: the lens opens correctly in the overview, and our 11 leader lines match the reference numerically. But the Enhanced transforms detail chapter turns the complete lens to the front, hides its internals, repeats the animation label twice, and only shows code. Explain how you would fix this chapter and apply the fix to the other detail chapters. Include desktop/mobile framing, real arrow anchors, accessible inactive content, demonstrations, and acceptance checks. Do not build an app.",
+      "expected_output": "Keeps the assembly open, isolates the actual selected layer in a readable close-up with context, explains its role through a relevant working demo, fits the part between measured panels, removes duplicate labels and inactive content, and checks every chapter independently of overview connector accuracy.",
+      "files": [],
+      "expectations": [
+        "Does not accept a front-facing colored casing as a clear view of the selected internal part.",
+        "Keeps the assembly open and uses unobstructed selected geometry with surrounding context.",
+        "Pairs the selected-layer explanation with a relevant working demonstration rather than only code.",
+        "Fits projected part bounds into space reserved between measured copy and demo panels on desktop and mobile.",
+        "Removes duplicate part labels and targets a visible surface rather than an empty bounding-box corner.",
+        "Hides inactive hero and overview content from assistive technology and disables inactive controls.",
+        "Checks all detail chapters, closing and reverse states, demonstration behavior and reduced motion; does not use accurate overview lines as proof of explanatory clarity."
+      ]
+    }
+  ]
+}

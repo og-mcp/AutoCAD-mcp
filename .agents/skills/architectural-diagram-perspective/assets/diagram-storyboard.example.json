@@ -1,0 +1,78 @@
+{
+  "project": "Courtyard Residence — Diagram to Perspective Explainer",
+  "footprint": {
+    "widthMeters": 15.6,
+    "depthMeters": 11.2,
+    "grossAreaSqm": 174.7,
+    "scale": "1:100",
+    "northAngleDeg": 0
+  },
+  "projections": {
+    "assembled": { "fov": 38, "mode": "exterior-perspective" },
+    "opening": { "fov": 28, "mode": "axonometric-transition" },
+    "overview": { "fov": 26, "mode": "exploded-axonometric-diagram" },
+    "detail": { "fov": 48, "mode": "human-scale-interior-perspective" }
+  },
+  "tiers": [
+    { "id": "tier-01-roof", "label": "01 Roof & Solar Canopy", "axis": "+Y (6.8m)" },
+    { "id": "tier-02-shell", "label": "02 Perimeter Structural Envelope", "axis": "-Y (3.6m)" },
+    { "id": "tier-03-rooms", "label": "03 Programmatic Room Modules", "axis": "Radial X/Z" },
+    { "id": "tier-04-plinth", "label": "04 Travertine Plinth & Courtyard Datum", "axis": "Datum 0.00m" }
+  ],
+  "modules": [
+    {
+      "id": "bedroom",
+      "number": "01",
+      "zone": "PRIVATE SANCTUARY",
+      "dimensions": "4.98 m × 5.28 m",
+      "area": "26.3 m²",
+      "assembledPosition": [-5, 0, -2.65],
+      "explodedOffset": [-1.85, 0, -1.35]
+    },
+    {
+      "id": "bathroom",
+      "number": "02",
+      "zone": "WET CORE",
+      "dimensions": "4.98 m × 5.28 m",
+      "area": "26.3 m²",
+      "assembledPosition": [0, 0, -2.65],
+      "explodedOffset": [0, 0, -1.65]
+    },
+    {
+      "id": "living",
+      "number": "03",
+      "zone": "SOCIAL PAVILION",
+      "dimensions": "4.98 m × 5.28 m",
+      "area": "26.3 m²",
+      "assembledPosition": [-5, 0, 2.65],
+      "explodedOffset": [-1.85, 0, 1.35]
+    },
+    {
+      "id": "kitchen",
+      "number": "04",
+      "zone": "CULINARY CORE",
+      "dimensions": "4.98 m × 5.28 m",
+      "area": "26.3 m²",
+      "assembledPosition": [0, 0, 2.65],
+      "explodedOffset": [0, 0, 1.65]
+    },
+    {
+      "id": "workspace",
+      "number": "05",
+      "zone": "QUIET STUDY",
+      "dimensions": "4.98 m × 5.28 m",
+      "area": "26.3 m²",
+      "assembledPosition": [5, 0, -2.65],
+      "explodedOffset": [1.85, 0, -1.35]
+    },
+    {
+      "id": "hall",
+      "number": "06",
+      "zone": "ARRIVAL THRESHOLD",
+      "dimensions": "4.98 m × 5.28 m",
+      "area": "26.3 m²",
+      "assembledPosition": [5, 0, 2.65],
+      "explodedOffset": [1.85, 0, 1.35]
+    }
+  ]
+}

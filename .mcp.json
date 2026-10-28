@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "architect-cad-mcp": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "architect_cad_mcp"],
+      "env": {
+        "PYTHONPATH": "C:/Users/AnimeshKumar1/Music/auto-cad-mcp"
+      }
+    }
+  }
+}

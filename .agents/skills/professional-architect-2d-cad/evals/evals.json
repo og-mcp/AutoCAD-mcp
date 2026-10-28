@@ -1,0 +1,42 @@
+{
+  "skill_name": "professional-architect-2d-cad",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design a 1-story 3-bedroom courtyard house on a 20m x 16m site with North at the top. Produce the complete architectural spatial design, structural grid, room schedule with Neufert clearances, and coordinate all 2D orthographic planes (Floor Plan at +1.20m cut, Reflected Ceiling Plan, Longitudinal & Transverse Sections, and N/S/E/W Elevations).",
+      "expected_output": "A complete architectural design grounded in Ching, Neufert, and Alexander patterns with an explicit A-D / 1-4 structural grid, consolidated wet core, <=18% circulation ratio, 3-tier exterior dimensions with 45-degree architectural ticks, and coordinated multi-plane specifications.",
+      "files": [],
+      "expectations": [
+        "Establishes a clear Parti, intimacy gradient (Arrival -> Social Pavilion -> Private Sanctuary), and consolidated shared wet walls.",
+        "Defines an alphanumeric structural column grid (A, B, C... and 1, 2, 3...) with rational bay spans.",
+        "Sizes all rooms, doors, corridors, and stairs according to Neufert anthropometrics and Blondel's stair formula (600mm <= 2R + T <= 630mm).",
+        "Specifies all coordinated 2D orthographic planes: Floor Plan (+1.20m cut), Reflected Ceiling Plan (unflipped mirror projection), Roof Plan, Sections (A-A, B-B), and 4 Exterior Elevations.",
+        "Uses AIA standard AutoCAD layers (A-GRID, A-WALL-FULL, A-DOOR, A-GLAZ, A-OVER, A-ANNO-DIMS) and lineweight hierarchy (0.50mm cut walls down to 0.09mm grid/hatch)."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review this residential floor plan proposal: Master bedroom is 2.8m x 3.1m with a 0.65m door and one small 0.6m x 0.6m window; the hallway is 0.75m wide and consumes 26% of the house area; the stair has 195mm risers and 230mm treads; the bathroom and kitchen are on opposite corners of the house. Critique this like a senior architect and provide corrected metric specifications.",
+      "expected_output": "A rigorous architectural critique identifying every anthropometric, code, and spatial efficiency failure, paired with exact corrected dimensions from Neufert and IBC/NBC codes.",
+      "files": [],
+      "expectations": [
+        "Flags the 2.8m x 3.1m (8.68m²) master bedroom as below Neufert minimum width (3.20m) and area (12.0m²).",
+        "Flags the 0.65m bedroom door and 0.75m hallway as code/ergonomic failures (requires >=0.80m bedroom door and >=0.90m–1.20m corridor).",
+        "Calculates the window glazing ratio (0.36m² / 8.68m² = 4.1%) and flags it as violating the >=10% habitable room daylight requirement.",
+        "Applies Blondel's Law (2*195 + 230 = 620mm, but R=195mm exceeds max 170–175mm residential riser and T=230mm is below min 280mm tread) and corrects to R=155–165mm, T=290–300mm.",
+        "Critiques the 26% corridor circulation waste (target <=15–18%) and consolidates the scattered kitchen/bathroom along a shared 150–200mm wet wall."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Generate a validated AutoCAD 2D floor plan (.dxf and .scr) for a courtyard residence using the professional-architect-2d-cad skill scripts and verify that all anthropometric checks pass.",
+      "expected_output": "Runs validate_floor_plan.py with 0 errors and runs generate_dxf_plan.py to output a multi-layer AutoCAD .dxf and .scr file with AIA layers and 45-degree architectural dimensions.",
+      "files": [],
+      "expectations": [
+        "Executes validate_floor_plan.py against the building specification JSON and confirms 0 anthropometric/code errors.",
+        "Executes generate_dxf_plan.py to produce floor_plan_a101.dxf and floor_plan_a101.scr.",
+        "Populates AIA layers including A-GRID, A-COLS, A-WALL-FULL, A-DOOR, A-DOOR-SWNG, A-GLAZ, A-OVER, A-ANNO-DIMS, A-ANNO-TEXT, and A-TTLB."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "project": {
+    "title": "TRAVERTINE COURTYARD RESIDENCE",
+    "sheetNumber": "A-101",
+    "scale": "1:100",
+    "units": "meters",
+    "northAngleDeg": 90,
+    "footprintWidth": 15.6,
+    "footprintDepth": 11.2,
+    "roofOverhang": 0.75,
+    "plinthElevation": 0.45,
+    "floorToFloorHeight": 3.15
+  },
+  "grid": {
+    "vertical": [
+      { "id": "A", "x": 0.0 },
+      { "id": "B", "x": 5.2 },
+      { "id": "C", "x": 10.4 },
+      { "id": "D", "x": 15.6 }
+    ],
+    "horizontal": [
+      { "id": "1", "y": 0.0 },
+      { "id": "2", "y": 5.0 },
+      { "id": "3", "y": 6.2 },
+      { "id": "4", "y": 11.2 }
+    ]
+  },
+  "columns": [
+    { "id": "C-A1", "x": 0.0, "y": 0.0, "size": 0.30 },
+    { "id": "C-B1", "x": 5.2, "y": 0.0, "size": 0.30 },
+    { "id": "C-C1", "x": 10.4, "y": 0.0, "size": 0.30 },
+    { "id": "C-D1", "x": 15.6, "y": 0.0, "size": 0.30 },
+    { "id": "C-A2", "x": 0.0, "y": 5.0, "size": 0.30 },
+    { "id": "C-B2", "x": 5.2, "y": 5.0, "size": 0.30 },
+    { "id": "C-C2", "x": 10.4, "y": 5.0, "size": 0.30 },
+    { "id": "C-D2", "x": 15.6, "y": 5.0, "size": 0.30 },
+    { "id": "C-A3", "x": 0.0, "y": 6.2, "size": 0.30 },
+    { "id": "C-B3", "x": 5.2, "y": 6.2, "size": 0.30 },
+    { "id": "C-C3", "x": 10.4, "y": 6.2, "size": 0.30 },
+    { "id": "C-D3", "x": 15.6, "y": 6.2, "size": 0.30 },
+    { "id": "C-A4", "x": 0.0, "y": 11.2, "size": 0.30 },
+    { "id": "C-B4", "x": 5.2, "y": 11.2, "size": 0.30 },
+    { "id": "C-C4", "x": 10.4, "y": 11.2, "size": 0.30 },
+    { "id": "C-D4", "x": 15.6, "y": 11.2, "size": 0.30 }
+  ],
+  "walls": [
+    { "id": "W-SOUTH", "x1": 0.0, "y1": 0.0, "x2": 15.6, "y2": 0.0, "thickness": 0.25, "type": "exterior" },
+    { "id": "W-NORTH", "x1": 0.0, "y1": 11.2, "x2": 15.6, "y2": 11.2, "thickness": 0.25, "type": "exterior" },
+    { "id": "W-WEST", "x1": 0.0, "y1": 0.0, "x2": 0.0, "y2": 11.2, "thickness": 0.25, "type": "exterior" },
+    { "id": "W-EAST", "x1": 15.6, "y1": 0.0, "x2": 15.6, "y2": 11.2, "thickness": 0.25, "type": "exterior" },
+    { "id": "W-SPINE-N", "x1": 0.0, "y1": 6.2, "x2": 15.6, "y2": 6.2, "thickness": 0.15, "type": "interior" },
+    { "id": "W-SPINE-S", "x1": 0.0, "y1": 5.0, "x2": 15.6, "y2": 5.0, "thickness": 0.15, "type": "interior" },
+    { "id": "W-WET-B1", "x1": 5.2, "y1": 6.2, "x2": 5.2, "y2": 11.2, "thickness": 0.20, "type": "wet-wall" },
+    { "id": "W-PART-C1", "x1": 10.4, "y1": 6.2, "x2": 10.4, "y2": 11.2, "thickness": 0.15, "type": "interior" },
+    { "id": "W-WET-B2", "x1": 5.2, "y1": 0.0, "x2": 5.2, "y2": 5.0, "thickness": 0.20, "type": "wet-wall" },
+    { "id": "W-PART-C2", "x1": 10.4, "y1": 0.0, "x2": 10.4, "y2": 5.0, "thickness": 0.15, "type": "interior" }
+  ],
+  "rooms": [
+    {
+      "id": "01",
+      "name": "PRIMARY BEDROOM",
+      "type": "primary_bedroom",
+      "zone": "PRIVATE SANCTUARY",
+      "habitable": true,
+      "wetRoom": false,
+      "x": 0.0,
+      "y": 6.2,
+      "width": 5.2,
+      "depth": 5.0,
+      "ceilingHeight": 2.85
+    },
+    {
+      "id": "02",
+      "name": "SPA BATH & WET CORE",
+      "type": "bathroom",
+      "zone": "WET CORE",
+      "habitable": false,
+      "wetRoom": true,
+      "sharedWetWall": "W-WET-B1",
+      "x": 5.2,
+      "y": 6.2,
+      "width": 5.2,
+      "depth": 5.0,
+      "ceilingHeight": 2.60
+    },
+    {
+      "id": "03",
+      "name": "STUDY & ATELIER",
+      "type": "study",
+      "zone": "PRIVATE SANCTUARY",
+      "habitable": true,
+      "wetRoom": false,
+      "x": 10.4,
+      "y": 6.2,
+      "width": 5.2,
+      "depth": 5.0,
+      "ceilingHeight": 2.85
+    },
+    {
+      "id": "04",
+      "name": "LIVING PAVILION",
+      "type": "living",
+      "zone": "SOCIAL PAVILION",
+      "habitable": true,
+      "wetRoom": false,
+      "x": 0.0,
+      "y": 0.0,
+      "width": 5.2,
+      "depth": 5.0,
+      "ceilingHeight": 3.15
+    },
+    {
+      "id": "05",
+      "name": "KITCHEN & DINING",
+      "type": "kitchen",
+      "zone": "WET CORE",
+      "habitable": true,
+      "wetRoom": true,
+      "sharedWetWall": "W-WET-B2",
+      "kitchenTriangleSum": 6.1,
+      "x": 5.2,
+      "y": 0.0,
+      "width": 5.2,
+      "depth": 5.0,
+      "ceilingHeight": 3.00
+    },
+    {
+      "id": "06",
+      "name": "ARRIVAL FOYER & COURT",
+      "type": "foyer",
+      "zone": "ARRIVAL THRESHOLD",
+      "habitable": false,
+      "wetRoom": false,
+      "x": 10.4,
+      "y": 0.0,
+      "width": 5.2,
+      "depth": 5.0,
+      "ceilingHeight": 3.00
+    },
+    {
+      "id": "07",
+      "name": "CENTRAL GALLERY SPINE",
+      "type": "corridor",
+      "zone": "CIRCULATION SPINE",
+      "habitable": false,
+      "wetRoom": false,
+      "x": 0.0,
+      "y": 5.0,
+      "width": 15.6,
+      "depth": 1.2,
+      "ceilingHeight": 2.70
+    }
+  ],
+  "doors": [
+    { "id": "D-01", "room": "06", "x": 13.0, "y": 0.0, "width": 1.10, "swingDeg": 90, "orientation": "north", "type": "entry" },
+    { "id": "D-02", "room": "01", "x": 1.2, "y": 6.2, "width": 0.90, "swingDeg": 90, "orientation": "north", "type": "interior" },
+    { "id": "D-03", "room": "02", "x": 6.4, "y": 6.2, "width": 0.80, "swingDeg": 90, "orientation": "north", "type": "bathroom" },
+    { "id": "D-04", "room": "03", "x": 11.6, "y": 6.2, "width": 0.90, "swingDeg": 90, "orientation": "north", "type": "interior" },
+    { "id": "D-05", "room": "04", "x": 1.2, "y": 5.0, "width": 0.95, "swingDeg": 90, "orientation": "south", "type": "interior" },
+    { "id": "D-06", "room": "05", "x": 6.4, "y": 5.0, "width": 0.95, "swingDeg": 90, "orientation": "south", "type": "interior" },
+    { "id": "D-07", "room": "06", "x": 11.6, "y": 5.0, "width": 1.00, "swingDeg": 90, "orientation": "south", "type": "interior" }
+  ],
+  "windows": [
+    { "id": "WIN-01", "room": "01", "wall": "north", "x1": 1.2, "y1": 11.2, "x2": 4.0, "y2": 11.2, "sill": 0.60, "head": 2.40 },
+    { "id": "WIN-02", "room": "01", "wall": "west", "x1": 0.0, "y1": 7.4, "x2": 0.0, "y2": 10.0, "sill": 0.60, "head": 2.40 },
+    { "id": "WIN-03", "room": "02", "wall": "north", "x1": 6.8, "y1": 11.2, "x2": 8.8, "y2": 11.2, "sill": 1.50, "head": 2.40 },
+    { "id": "WIN-04", "room": "03", "wall": "north", "x1": 11.6, "y1": 11.2, "x2": 14.4, "y2": 11.2, "sill": 0.75, "head": 2.40 },
+    { "id": "WIN-05", "room": "03", "wall": "east", "x1": 15.6, "y1": 7.4, "x2": 15.6, "y2": 10.0, "sill": 0.75, "head": 2.40 },
+    { "id": "WIN-06", "room": "04", "wall": "south", "x1": 1.0, "y1": 0.0, "x2": 4.2, "y2": 0.0, "sill": 0.15, "head": 2.40 },
+    { "id": "WIN-07", "room": "04", "wall": "west", "x1": 0.0, "y1": 1.2, "x2": 0.0, "y2": 3.8, "sill": 0.15, "head": 2.40 },
+    { "id": "WIN-08", "room": "05", "wall": "south", "x1": 6.4, "y1": 0.0, "x2": 9.2, "y2": 0.0, "sill": 0.90, "head": 2.40 }
+  ],
+  "stairs": [
+    {
+      "id": "ST-ENTRY",
+      "name": "Entry Plinth Steps",
+      "riserMm": 150,
+      "treadMm": 300,
+      "riserCount": 3,
+      "widthM": 1.80,
+      "x": 12.6,
+      "y": -0.90
+    }
+  ],
+  "sections": [
+    { "id": "A-A", "type": "longitudinal", "x1": -1.2, "y1": 5.6, "x2": 16.8, "y2": 5.6, "lookDirection": "north" },
+    { "id": "B-B", "type": "transverse", "x1": 7.8, "y1": -1.2, "x2": 7.8, "y2": 12.4, "lookDirection": "west" }
+  ]
+}

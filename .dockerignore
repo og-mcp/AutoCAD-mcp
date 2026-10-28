@@ -1,0 +1,41 @@
+# Git and GitHub
+.git/
+.github/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+tests/
+
+# Python byte-code and build caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Runtime output directories
+cad_output/
+demo-output/
+
+# Agents, Docs & Scratch
+.agents/
+examples/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
