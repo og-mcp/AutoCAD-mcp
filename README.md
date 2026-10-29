@@ -46,7 +46,8 @@
 auto-cad-mcp/
 ├── .github/
 │   └── workflows/
-│       └── ci.yml                       # Automated Pytest, health check, & Docker CI pipeline
+│       ├── ci.yml                       # Automated Pytest, health check, & Docker CI pipeline
+│       └── docker-publish.yml           # Version-gated multi-arch Docker Hub publish
 ├── architect_cad_mcp/                   # Clean root Python package
 │   ├── __init__.py                      # Package root and public API
 │   ├── __main__.py                      # CLI runner (python -m architect_cad_mcp)
@@ -133,6 +134,7 @@ auto-cad-mcp/
 ├── .mcp.json                            # MCP server declaration
 ├── Dockerfile                           # Multi-stage secure Docker container (appuser:10001)
 ├── docker-compose.yml                   # Docker Compose configuration (SSE service)
+├── Makefile                             # install / test / build / publish targets
 ├── pyproject.toml                       # Python package configuration (Hatchling)
 └── README.md                            # Complete technical manual
 ```
@@ -480,6 +482,30 @@ git remote add origin https://github.com/<your-username>/architect-cad-mcp.git
 git branch -M main
 git push -u origin main
 ```
+
+### Publishing to Docker Hub (Makefile)
+The [`Makefile`](Makefile) reads the version from `pyproject.toml` and builds a multi-arch (`linux/amd64`, `linux/arm64`) image tagged `:<version>` and `:latest`:
+```bash
+make version                          # -> 1.0.0
+make build                            # local single-arch image
+docker login
+make publish DOCKER_USERNAME=<your-dockerhub-user>
+```
+
+### Automated Publish via GitHub Actions
+[`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml) runs on every push to `main`:
+1. Compares `version` in `pyproject.toml` between `HEAD^` and `HEAD`.
+2. Runs `make install`, `make test`, `make health`.
+3. **Only if the version changed**, logs in to Docker Hub and runs `make publish`. (You can force a publish manually via *Actions → Docker Image CI → Run workflow*.)
+
+Required repository secrets (*Settings → Secrets and variables → Actions*):
+
+| Secret | Value |
+| :--- | :--- |
+| `DOCKER_USERNAME` | Docker Hub username / org |
+| `DOCKER_PASSWORD` | Docker Hub access token (Account Settings → Personal access tokens) |
+
+To release a new image: bump `version` in `pyproject.toml`, commit, and push to `main`.
 
 ### Publishing to GitHub Container Registry (GHCR)
 ```bash

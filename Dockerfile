@@ -37,10 +37,14 @@ RUN pip install --no-cache-dir .
 # ------------------------------------------------------------------------------
 FROM python:3.11-slim AS runtime
 
+# Version is injected by `make build` / `make publish` from pyproject.toml
+ARG VERSION=1.0.0
+
 # Metadata labels (OCI specification)
 LABEL org.opencontainers.image.title="architect-cad-mcp" \
       org.opencontainers.image.description="Dedicated 2D Architectural AutoCAD MCP Server with AIA layers, multi-plane orthographic generator, and Neufert DRC" \
-      org.opencontainers.image.version="1.0.0" \
+      org.opencontainers.image.version="${VERSION}" \
+      org.opencontainers.image.source="https://github.com/og-mcp/AutoCAD-mcp" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.authors="Antigravity Pair Programmer"
 
