@@ -1,6 +1,6 @@
 [project]
 name = "architect-cad-mcp"
-version = "1.0.0"
+version = "1.0.1"
 description = "Dedicated 2D Architectural AutoCAD MCP Server with AIA layers, multi-plane orthographic generator (Floor Plan, RCP, Structural, Roof, Elevations, Sections), Neufert DRC, and House/Building/Workplace templates"
 readme = "README.md"
 license = "MIT"
