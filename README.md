@@ -46,8 +46,7 @@
 auto-cad-mcp/
 ├── .github/
 │   └── workflows/
-│       ├── ci.yml                       # Automated Pytest, health check, & Docker CI pipeline
-│       └── docker-publish.yml           # Version-gated multi-arch Docker Hub publish
+│       └── ci-cd.yml                    # Unified CI/CD (Test matrix -> Docker verify -> Docker Hub publish)
 ├── architect_cad_mcp/                   # Clean root Python package
 │   ├── __init__.py                      # Package root and public API
 │   ├── __main__.py                      # CLI runner (python -m architect_cad_mcp)
@@ -492,11 +491,11 @@ docker login
 make publish DOCKER_USERNAME=<your-dockerhub-user>
 ```
 
-### Automated Publish via GitHub Actions
-[`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml) runs on every push to `main`:
-1. Compares `version` in `pyproject.toml` between `HEAD^` and `HEAD`.
-2. Runs `make install`, `make test`, `make health`.
-3. **Only if the version changed**, logs in to Docker Hub and runs `make publish`. (You can force a publish manually via *Actions → Docker Image CI → Run workflow*.)
+### Automated CI/CD & Publish via GitHub Actions
+The unified pipeline [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml) runs on pushes to `main` and Pull Requests:
+1. **Test Stage**: Runs tests, health check, and headless demo across Python 3.10, 3.11, and 3.12.
+2. **Docker Verify Stage**: Builds the image, verifies non-root UID 10001, and runs container health check.
+3. **Publish Stage** (main branch only): Compares `version` in `pyproject.toml` between `HEAD^` and `HEAD`. If bumped (or if manually triggered with `force: true`), logs into Docker Hub and publishes multi-arch images (`linux/amd64`, `linux/arm64`) tagged with `:<version>` and `:latest`.
 
 Required repository secrets (*Settings → Secrets and variables → Actions*):
 
